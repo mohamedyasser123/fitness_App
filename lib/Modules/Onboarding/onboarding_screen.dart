@@ -77,6 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                    Navigator.pop(context);
                  }
                },
+
                child: AnimatedContainer(
                  height: 60.h ,
                  width: 60.w,
