@@ -1,0 +1,4 @@
+enum ScreenRoutes{
+  splashScreen,
+  onboarding
+}

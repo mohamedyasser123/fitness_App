@@ -1,18 +1,23 @@
+import 'package:fitness_app/Modules/Onboarding/onboarding_screen.dart';
 import 'package:fitness_app/Utilites/image_contants.dart';
 import 'package:fitness_app/Utilites/text_helper.dart';
 import 'package:fitness_app/common/theme_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../Utilites/enums.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static String routeName = ScreenRoutes.splashScreen.name;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -34,7 +39,14 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
       bottomNavigationBar:  GestureDetector(
-        onTap: (){},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OnboardingScreen(),
+            ),
+          );
+        },
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 30.w),
           child: Container(
